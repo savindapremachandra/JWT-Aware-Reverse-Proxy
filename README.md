@@ -48,7 +48,7 @@ This is a proof-of-concept reverse proxy written in Go 🐹 that routes traffic 
 
   ```json
   {
-    "sub": "user@example.com",
+    "user": "user@example.com",
     "tier": "subscribed",
     "exp": 9999999999
   }
@@ -68,8 +68,8 @@ cd proxy
 ### 2. Generate RSA Keys
 
 ```bash
-openssl genrsa -out private.pem 2048
-openssl rsa -in private.pem -pubout -out public.pem
+openssl genrsa -out private-key.pem 2048
+openssl rsa -in private-key.pem -pubout -out public.pem
 ```
 
 ### 3. Build Docker Images
@@ -134,9 +134,4 @@ Got ideas, questions, or feedback? Feel free to open issues or PRs — or just d
 
 MIT. Use it, learn from it, build something better with it.
 
-```
-
----
-
-Let me know if you want a badge-style header (build, version, etc.), a Makefile, or instructions for generating sample JWTs using `jwt.io` or Go scripts 👨‍💻
 ```
