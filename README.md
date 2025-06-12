@@ -21,7 +21,7 @@ This is a proof-of-concept reverse proxy written in Go 🐹 that routes traffic 
 ````
 
 * JWT is passed via `Authorization: Bearer <token>`
-* Proxy reads routing logic from `config.yaml`
+* Proxy reads routing logic from `routes.yaml`
 * Backends are basic Go servers that respond based on the tier
 
 ---
@@ -62,7 +62,7 @@ This is a proof-of-concept reverse proxy written in Go 🐹 that routes traffic 
 
 ```bash
 git clone https://github.com/savindapremachandra/jwt-reverse-proxy-go.git
-cd jwt-reverse-proxy-go
+cd proxy
 ```
 
 ### 2. Generate RSA Keys
