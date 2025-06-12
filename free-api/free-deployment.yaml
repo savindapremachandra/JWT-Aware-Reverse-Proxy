@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: free-api
+  namespace: go-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: free
+  template:
+    metadata:
+      labels:
+        app: free
+    spec:
+      containers:
+      - name: free
+        image: savindap/free-api
+        ports:
+        - containerPort: 9000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: free-service
+  namespace: go-proxy
+spec:
+  selector:
+    app: free
+  ports:
+    - port: 9000
+      targetPort: 9000

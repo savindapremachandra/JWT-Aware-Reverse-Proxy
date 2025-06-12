@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: subscribed-api
+  namespace: go-proxy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: subscribed
+  template:
+    metadata:
+      labels:
+        app: subscribed
+    spec:
+      containers:
+      - name: subscribed
+        image: savindap/subscribed-api:latest
+        ports:
+        - containerPort: 9000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: subscribed-service
+  namespace: go-proxy
+spec:
+  selector:
+    app: subscribed
+  ports:
+    - port: 9000
+      targetPort: 9000

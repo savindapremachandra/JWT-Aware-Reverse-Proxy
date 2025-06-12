@@ -1,0 +1,3 @@
+routes:
+  subscribed: http://subscribed-service:9001
+  free: http://free-service:9002
