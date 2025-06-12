@@ -37,8 +37,8 @@ This is a proof-of-concept reverse proxy written in Go 🐹 that routes traffic 
 
   ```yaml
   routes:
-    free: http://free-tier-service
-    subscribed: http://subscribed-tier-service
+    free: http://free-tier-service:9000
+    subscribed: http://subscribed-tier-service:9000
   ```
 
 ### 🔐 JWT Token
